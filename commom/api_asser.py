@@ -1,24 +1,24 @@
+import sys
+sys.path.append("/home/test/zhongKe/")
+
 from commom.db_handler import *
 from commom.handle_request import *
 import requests
 import json
 import pprint
 import pytest
-import allure
 import os
-@allure.feature("接口测试")
 class Test_Case:
     def db_data(self):
-        db = DBHandler(host='127.0.0.1', port=3306,
-                       user='root', password='admin',
+        db = DBHandler(host='182.92.202.235', port=3306,
+                       user='root', password='Root_12root',
                        database='api_data', charset='utf8')
-        sql = "SELECT expect,method,url,data FROM test_case where case_id=2"
+        sql = "SELECT expect,method,url,data FROM test_case "
         data = db.query(sql)
         # print(data)
         # print(url)
         return data
 
-    # @allure.story('执行requests')
     def api_requests(self):
         #获取数据
         data=self.db_data()
@@ -43,15 +43,20 @@ class Test_Case:
         assert res == expect
         print("OK")
         print(re)
+        # print(expect)
         return res
+
+
         # print(expect)
         # # print(type(re))
     # pytest.main(['--html=report/test_x.html','ceshi2.py'])
 if __name__ == '__main__':
-    # pytest.main(['--html=../report/test_x.html', 'api_asser.py'])
-    pytest.main(['-s', '-q', '--alluredir', '../report/xml', 'api_asser.py'])
+    pytest.main(['--html=../report/test_x.html', 'api_asser.py'])
+    Test_Case().test_home_page()
+    # pytest.main(['-s', '-q', '--alluredir', '../report/xml', 'api_asser.py'])
 
-    # Test_Case().test_home_page()
+
+# Test_Case().db_data()
 
 
 

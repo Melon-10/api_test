@@ -11,7 +11,7 @@ class DBHandler:
         # 获取游标
         self.cursor = self.conn.cursor()
 
-    def query(self, sql, args=None, one=True):
+    def query(self, sql, args=None, one=False):
         self.cursor.execute(sql, args)
         # 提交事务
         self.conn.commit()

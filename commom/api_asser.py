@@ -1,5 +1,5 @@
-import sys
-sys.path.append("/home/test/zhongKe/")
+# import sys
+# sys.path.append("/home/test/zhongKe/")
 
 from commom.db_handler import *
 from commom.handle_request import *
@@ -52,7 +52,7 @@ class Test_Case:
     # pytest.main(['--html=report/test_x.html','ceshi2.py'])
 if __name__ == '__main__':
     pytest.main(['--html=../report/test_x.html', 'api_asser.py'])
-    Test_Case().test_home_page()
+    # Test_Case().test_home_page()
     # pytest.main(['-s', '-q', '--alluredir', '../report/xml', 'api_asser.py'])
 
 

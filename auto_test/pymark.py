@@ -1,5 +1,5 @@
 import sys
-sys.path.append("/home/test/auto_1213/")
+sys.path.append("/home/test/api_test/")
 import pytest
 import requests
 import json

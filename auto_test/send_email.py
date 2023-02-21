@@ -1,5 +1,5 @@
 import sys
-sys.path.append("/home/test/auto_1213/")
+sys.path.append("/home/test/api_test/")
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
@@ -23,6 +23,7 @@ class Email:
         smtpObj.set_debuglevel(1)
         smtpObj.login(mail_user, mail_pass)
         smtpObj.sendmail(sender, receivers, message.as_string())
-        print("邮件发送成功")
+
 if __name__ == '__main__':
     Email().sendEmail()
+    print("邮件发送成功")

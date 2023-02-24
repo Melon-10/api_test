@@ -8,8 +8,8 @@ from auto_test.handle_request import *
 
 class Test_data:
     def db_data(self):
-        db = DBHandler(host='182.92.202.235', port=3306,
-                       user='root', password='Root_12root',
+        db = DBHandler(host='123.57.219.217', port=3306,
+                       user='root', password='!QAZ2wsx',
                        database='api_data', charset='utf8')
         sql = "SELECT expect,method,url,data FROM test_case "
         test_data = db.query(sql)
